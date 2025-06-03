@@ -1,20 +1,37 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useAuthStore } from '../stores/authStore';
-import { palette, spacing, radius } from '../../theme';
+import { useAuthStore } from '../stores/authStore'; // или как у тебя называется стор
+import { palette, spacing } from '../../theme';
+import { useNavigation } from '@react-navigation/native';
 
 export default function RoleSwitch() {
   const setRole = useAuthStore((s) => s.setRole);
+  const navigation = useNavigation();
+
   const selectRole = async (role: 'seeker' | 'employer') => {
     await AsyncStorage.setItem('role', role);
     setRole(role);
+
+    if (role === 'seeker') {
+      navigation.navigate('HomeSeeker');
+    } else if (role === 'employer') {
+      navigation.navigate('HomeEmployer');
+    }
   };
+
   return (
     <View style={{ flex: 1, justifyContent: 'center', padding: spacing(4) }}>
-      <TouchableOpacity onPress={() => selectRole('seeker')} style={{ backgroundColor: palette.primary, padding: spacing(4), borderRadius: radius, marginBottom: spacing(3) }}>
+      <TouchableOpacity
+        onPress={() => selectRole('seeker')}
+        style={{ backgroundColor: palette.primary, padding: spacing(4), borderRadius: 8, marginBottom: spacing(2) }}
+      >
         <Text style={{ color: palette.onPrimary, textAlign: 'center' }}>Соискатель</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => selectRole('employer')} style={{ backgroundColor: palette.primary, padding: spacing(4), borderRadius: radius }}>
+
+      <TouchableOpacity
+        onPress={() => selectRole('employer')}
+        style={{ backgroundColor: palette.primary, padding: spacing(4), borderRadius: 8 }}
+      >
         <Text style={{ color: palette.onPrimary, textAlign: 'center' }}>Работодатель</Text>
       </TouchableOpacity>
     </View>
