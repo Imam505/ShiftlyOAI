@@ -13,9 +13,9 @@ export default function RoleSwitch() {
     setRole(role);
 
     if (role === 'seeker') {
-      navigation.navigate('HomeSeeker');
+      navigation.navigate('ApplicantScreen');
     } else if (role === 'employer') {
-      navigation.navigate('HomeEmployer');
+      navigation.navigate('EmployerScreen');
     }
   };
 
