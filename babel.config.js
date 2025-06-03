@@ -1,4 +1,7 @@
 module.exports = {
   presets: ['babel-preset-expo'],
-  plugins: ['@babel/plugin-transform-private-methods'],
+  plugins: [
+    '@babel/plugin-transform-private-methods',
+    ['@babel/plugin-proposal-private-property-in-object', { loose: false }],
+  ],
 };
