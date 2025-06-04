@@ -26,8 +26,8 @@
   },
 "devDependencies": {
   "@babel/core": "^7.25.2",
-  "@babel/plugin-proposal-private-property-in-object": "^7.21.11",   // ← добавить
-  "@babel/plugin-transform-private-methods": "^7.27.1",              // ← добавить
+  "@babel/plugin-proposal-private-property-in-object": "^7.21.11",   
+  "@babel/plugin-transform-private-methods": "^7.27.1",              
   "@eslint/js": "^9.0.0",
   "@types/jest": "^29.5.14",
   "@types/react": "~19.0.10",
