@@ -1,6 +1,7 @@
+import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useAuthStore } from '../stores/authStore'; // или как у тебя называется стор
+import { useAuthStore } from '../stores/authStore'; // твой Zustand-стор
 import { palette, spacing } from '../../theme';
 import { useNavigation } from '@react-navigation/native';
 
