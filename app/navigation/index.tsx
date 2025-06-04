@@ -1,8 +1,10 @@
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import RoleSwitch from '../screens/RoleSwitch';
-import ApplicantScreen from '../screens/ApplicantScreen';  // Экран соискателя
-import EmployerScreen from '../screens/EmployerScreen';    // Экран работодателя
+import ApplicantScreen from '../screens/ApplicantScreen';
+import EmployerScreen from '../screens/EmployerScreen';
 
 const Stack = createNativeStackNavigator();
 
