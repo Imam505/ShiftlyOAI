@@ -3,8 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import RoleSwitch from '../screens/RoleSwitch';
-import ApplicantScreen from '../screens/ApplicantScreen';
-import EmployerScreen from '../screens/EmployerScreen';
+import ApplicantScreen from '../screens/HomeSeeker';
+import EmployerScreen from '../screens/HomeEmployer';
 
 const Stack = createNativeStackNavigator();
 
